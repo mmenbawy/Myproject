@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<title><%= user.name %></title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #941414;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #941414;
+    color: white;
+}
+
+
+
+
+
+
+</style>
+
+
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="/<%= user.profilepic %>" style="width:100%" alt="Avatar"/>
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2><%= user.name %></h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><%= user.faculty%></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Cairo, UK 'aywa cairo fel UK'</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><%= user.email%></p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Adobe Photoshop</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+          </div>
+          <p>Photography</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+          <p>Illustrator</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+          <p>Media</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>English</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          </div>
+          <p>Spanish</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+          </div>
+          <p>German</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+      
+<% if(user.portfolio.length > 0){%>
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+  <% }%>
+
+
+          
+       
+       
+<% for(var i=0; i<user.portfolio.length; i++){%>
+
+<div class="w3-container">
+      <div align="right">  <a href=""><i class="fa fa-pencil" > </i></a>  </div>
+          <h5 class="w3-opacity"><b><%= user.portfolio[i].name %></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+          <p><%= user.portfolio[i].link%></p>
+          <p><%= user.portfolio[i].repolink%></p>
+           
+<% if(user.portfolio[i].workpic){%>
+           <div class="w3-display-container" align="right">
+          <img src="/<%= user.portfolio[i].workpic %>" style="width:25%" />
+          
+        </div>
+       <%  }%> 
+          <hr>
+         </div>
+     <% } %>
+
+
+   
+<div class="w3-container">
+        <!-- Trigger/Open The Modal -->
+<div align="center">
+<a href="#makeprofile" id="myBtn2" role="button" style="text-decoration: none">
+<h5>
+<i class="fa fa-plus w3-text-teal"></i>
+
+<% if(user.portfolio.length > 0){%>
+<span class="w3-text-teal"> Add work</span>
+  <% }else{%>
+<span class="w3-text-teal"> Make portfolio</span>
+  <% } %>
+</h5>
+</a>
+</div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+<!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" id="close2">&times;</span>
+      <h2>Add Work</h2>
+    </div>
+    <div class="modal-body">
+    <form class="form-signin" method="POST" action="/users/profile/addWork " enctype="multipart/form-data" id="addwork">
+     <fieldset>
+    <p>
+<% if(error)
+      { %>
+        <div class="alert alert-danger"><%= error.msg %></div>
+       <script> document.getElementById('myModal2').style.display = "block";</script>
+    <% }; 
+      %>
+
+    <input type="text" id="workname" name="workname" class="form-control" placeholder="work name" class="input-xlarge  width="30p" required autofocus>
+    <br/>
+    <input type="text" id="link" name="link" class="form-control" placeholder="link" class="input-xlarge" >
+    <br/>
+    <input type="text" id="repolink" name="repolink" class="form-control" placeholder="repo link" class="input-xlarge" >
+    <br/>
+    <input class="w3-input w3-border" type="file" accepted="image/*"  id="workpic" name="workpic"
+        placeholder=".jpg/ .png/...." class="input-xlarge" ></p>
+    
+    
+   </div>
+    <div class="modal-footer">
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" >DONE</button>
+      </div>
+    </div>
+    </div>
+    
+   </fieldset>
+</form>
+  
+
+<script>
+// Get the modal
+var modal2 = document.getElementById('myModal2');
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn2");
+// Get the <span> element that closes the modal
+var span2 = document.getElementById("close2");
+// When the user clicks the button, open the modal 
+btn2.onclick = function() {
+    modal2.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+    modal2.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+     if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+</script>
+
+</div>
+      </div>
+</div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Don't find me on social media because i hv fb only</p>
+  <i class="fa fa-facebook-official w3-hover-text-indigo w3-large"></i>
+  <i class="fa fa-instagram w3-hover-text-purple w3-large"></i>
+  <i class="fa fa-snapchat w3-hover-text-yellow w3-large"></i>
+  <i class="fa fa-pinterest-p w3-hover-text-red w3-large"></i>
+  <i class="fa fa-twitter w3-hover-text-light-blue w3-large"></i>
+  <i class="fa fa-linkedin w3-hover-text-indigo w3-large"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3schools</a>, 
+  <a href="http://stackoverflow.com/questions/35024285/how-to-save-array-of-objects-in-mongoose" target="_blank">stackoverflow </a>
+  we welad hala 3ala el net we el 
+  <a href="http://mongoosejs.com/docs/subdocs.html" target="_blank">official documentation beta3 mongoose bardo</a></p>
+</footer>
+
+</body>
+</html>

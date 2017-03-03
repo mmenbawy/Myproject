@@ -1,0 +1,28 @@
+<form class="form-signin" method="POST" action="/users/login ">
+
+<% if(error)
+      { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% }; 
+      %>
+
+        <h2 class="">Please sign in</h2>
+
+        <label for="inputUsername" class="">User name</label>
+        <input type="text" id="inputusername" name="inputusername" class="form-control" placeholder="user name" class="input-xlarge" required autofocus>
+      
+        <label for="inputPassword" class="">Password</label>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" class="input-xlarge" required>
+
+
+      
+       
+          <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" >Sign in</button>
+      </div>
+    </div>
+
+       
+      </form>
